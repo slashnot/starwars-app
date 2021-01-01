@@ -1,11 +1,14 @@
 import AppRoutes from 'AppRoutes';
+import AppStateProvider from 'store/AppStateProvider';
 import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <AppRoutes />
-    </div>
+    <AppStateProvider>
+      <div className="App">
+        <AppRoutes />
+      </div>
+    </AppStateProvider>
   );
 }
 
