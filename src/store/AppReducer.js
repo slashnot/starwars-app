@@ -6,8 +6,11 @@ different modules to individual reducer files.
 
 const AppReducer = (state, action) => {
     switch (action.type) {
-        case "ACTION":
-            return state
+        case "CHANGE_NAME":
+            return {
+                ...state,
+                user: "RAM KUMAR"
+            }
 
         default:
             return state

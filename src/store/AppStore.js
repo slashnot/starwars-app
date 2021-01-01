@@ -3,7 +3,7 @@
 
 const appStore = {
     isLoggedIn: false,
-    user: null,
+    user: "RAM",
     
 }
 
