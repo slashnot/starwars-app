@@ -4,7 +4,7 @@ import AppContext from 'store/AppContext';
 import { useContext } from 'react';
 
 const SearchPage = props => {
-    const { appState, appDispatch } = useContext(AppContext)
+    const { appState } = useContext(AppContext)
     return (
         <div className="search-page">
             <TopNav />
