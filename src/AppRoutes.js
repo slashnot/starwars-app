@@ -1,9 +1,9 @@
 import React from "react";
 import {
-    BrowserRouter as Router, Switch, Route, Redirect
+    BrowserRouter as Router, Switch, Route
 } from "react-router-dom";
 
-import PublicRoute from 'components/auth/PublicRoute'
+import { PublicRoute, PrivateRoute } from 'components/auth'
 
 // Pages
 import { LoginPage } from "components/pages/LoginPage";
@@ -14,9 +14,8 @@ const AppRoutes = props => {
     return (
         <Router>
             <Switch>
-                <PublicRoute exact redirect="/search" path="/" component={LoginPage}/>
-                <Route exact path="/search" component={SearchPage} />
-                <Route exact path="/details" render={() => <h1>Details</h1>} />
+                <PublicRoute exact path="/" component={LoginPage} />
+                <PrivateRoute exact path="/search" component={SearchPage} />
                 <Route path="*" render={() => <h1>404</h1>} />
             </Switch>
         </Router>
