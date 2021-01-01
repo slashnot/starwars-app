@@ -4,6 +4,7 @@
 const appStore = {
     isLoggedIn: false,
     currentUser: {},
+    loginError: ''
 }
 
 export default appStore

@@ -34,6 +34,7 @@ const LoginPage = () => {
                             <label htmlFor="#password">Password</label>
                             <FormInput name="password" type="password" id="#password" placeholder="Password" />
                         </FormGroup>
+                        {appState.loginError && <h4>{appState.loginError}</h4>}
                     </CardBody>
                     <CardFooter>
                         <Button type="submit">Login</Button>

@@ -6,7 +6,7 @@ import { useContext } from 'react';
 
 const useAuth = () => {
     const [isLoggedIn, setLogin] = useState(false)
-    const [currentUser, setCurrentUser] = useState({})
+    const [loginUser, setLoginUser] = useState({})
     const { appDispatch } = useContext(AppContext)
     const baseUrl = 'https://swapi.dev/api'
 
@@ -16,27 +16,50 @@ const useAuth = () => {
         const url = `${baseUrl}/people/?search=${username}`
         const res = await fetch(url)
         const users = await res.json()
+        let currentUser = users && users.results.length ? users.results[0] : null
+
+        // Clear Error Messages
+        appDispatch({ type: 'CLEAR_LOGIN_ERROR' })
 
         // Check for valid user
-        if (users && users.results.length) {
-            // Set  user in app store
-            appDispatch({ type: 'LOGIN_SUCCESS', payload: users.results[0] })
+        if (currentUser) {
+            // Check password
+            if (currentUser.birth_year === password) {
+                // Set  user in app store
+                appDispatch({ type: 'LOGIN_SUCCESS', payload: currentUser })
 
-            // Set values in local storage
-            localStorage.setItem('isLoggedIn', true)
-            localStorage.setItem('currentUser', JSON.stringify(users.results[0]))
+                // Set values in local storage
+                localStorage.setItem('isLoggedIn', true)
+                localStorage.setItem('currentUser', JSON.stringify(currentUser))
 
-            // Update local state
-            setLogin(true)
-            setCurrentUser(users.results[0])
+                // Update local state
+                setLogin(true)
+                setLoginUser(currentUser)
 
-            return currentUser
+                return loginUser
+            }
+            else {
+                // password not found
+                appDispatch({ type: 'LOGIN_PASSWORD_ERROR', payload: 'Password is invalid' })
+            }
         }
-
+        else {
+            // User not found
+            appDispatch({ type: 'LOGIN_USERNAME_ERROR', payload: 'Username not found' })
+        }
         return []
     }
 
-    return { login, isLoggedIn, currentUser }
+    /* Logout function
+    --------------------------------------------------- */
+    const logout = () => {
+        appDispatch({ type: 'LOGOUT' })
+        localStorage.clear()
+        setLogin(false)
+        setLoginUser({})
+    }
+
+    return { login, logout, isLoggedIn, loginUser }
 }
 
 export default useAuth

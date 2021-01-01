@@ -13,6 +13,31 @@ const AppReducer = (state, action) => {
                 currentUser: action.payload
             }
 
+        case "LOGIN_USERNAME_ERROR":
+            return {
+                ...state,
+                loginError: action.payload
+            }
+
+        case "LOGIN_PASSWORD_ERROR":
+            return {
+                ...state,
+                loginError: action.payload
+            }
+
+        case "CLEAR_LOGIN_ERROR":
+            return {
+                ...state,
+                loginError: null
+            }
+
+        case "LOGOUT":
+            return {
+                ...state,
+                isLoggedIn: false,
+                currentUser: null
+            }
+
         default:
             return state
     }
