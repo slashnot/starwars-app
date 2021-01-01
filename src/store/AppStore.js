@@ -3,8 +3,7 @@
 
 const appStore = {
     isLoggedIn: false,
-    user: "RAM",
-    
+    currentUser: {},
 }
 
 export default appStore
