@@ -1,12 +1,8 @@
-
-import { useState } from 'react'
-import AppContext from 'store/AppContext';
 import { useContext } from 'react';
+import AppContext from 'store/AppContext';
 
 
 const useAuth = () => {
-    const [isLoggedIn, setLogin] = useState(false)
-    const [loginUser, setLoginUser] = useState({})
     const { appDispatch } = useContext(AppContext)
     const baseUrl = 'https://swapi.dev/api'
 
@@ -32,11 +28,7 @@ const useAuth = () => {
                 localStorage.setItem('isLoggedIn', true)
                 localStorage.setItem('currentUser', JSON.stringify(currentUser))
 
-                // Update local state
-                setLogin(true)
-                setLoginUser(currentUser)
-
-                return loginUser
+                return currentUser
             }
             else {
                 // password not found
@@ -55,11 +47,9 @@ const useAuth = () => {
     const logout = () => {
         appDispatch({ type: 'LOGOUT' })
         localStorage.clear()
-        setLogin(false)
-        setLoginUser({})
     }
 
-    return { login, logout, isLoggedIn, loginUser }
+    return { login, logout }
 }
 
 export default useAuth

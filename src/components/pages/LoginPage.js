@@ -21,18 +21,17 @@ const LoginPage = () => {
 
     return (
         <div className="login-page">
-            <h1>{appState.isLoggedIn ? "yes" : "No"}-{appState.currentUser.name}</h1>
             <Form onSubmit={handleLoginSubmit}>
                 <Card style={{ maxWidth: "300px" }}>
                     <CardBody>
                         <CardTitle>Login</CardTitle>
                         <FormGroup>
                             <label htmlFor="#username">Username</label>
-                            <FormInput name="username" id="#username" placeholder="Username" />
+                            <FormInput defaultValue="luke" name="username" id="#username" placeholder="Username" />
                         </FormGroup>
                         <FormGroup>
                             <label htmlFor="#password">Password</label>
-                            <FormInput name="password" type="password" id="#password" placeholder="Password" />
+                            <FormInput defaultValue="19BBY" name="password" type="password" id="#password" placeholder="Password" />
                         </FormGroup>
                         {appState.loginError && <h4>{appState.loginError}</h4>}
                     </CardBody>
