@@ -1,0 +1,12 @@
+{
+    "files.exclude": {
+        "**/package-lock.json": true,
+        "**/netlify.toml": true,
+        "**/.gitignore": true,
+        "**/jsconfig.json": true,
+        "**/.eslintcache": true,
+        "**/node_modules": true,
+        "**/public": true,
+        "**/README.md": true
+    }
+}
