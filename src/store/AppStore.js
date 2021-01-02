@@ -5,7 +5,8 @@ const appStore = {
     isLoggedIn: localStorage.getItem('isLoggedIn') ? JSON.parse(localStorage.getItem('isLoggedIn')) : false,
     currentUser: {},
     loginError: '',
-    searchResults: []
+    searchResults: [],
+    isApiLoading: false
 }
 
 export default appStore

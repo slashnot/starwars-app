@@ -7,7 +7,7 @@ import { useAuth } from 'hooks'
 const SearchPage = () => {
     const { logout } = useAuth()
     const { appState } = useContext(AppContext)
-    const searchResults = appState.searchResults
+    const { searchResults } = appState
 
     const renderSearchResults = (results) => {
         if (!results.length)

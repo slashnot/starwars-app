@@ -50,6 +50,18 @@ const AppReducer = (state, action) => {
                 searchResults: []
             }
 
+        case "LOADING_START":
+            return {
+                ...state,
+                isApiLoading: true
+            }
+
+        case "LOADING_DONE":
+            return {
+                ...state,
+                isApiLoading: false
+            }
+
 
         default:
             return state
