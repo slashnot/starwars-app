@@ -4,7 +4,6 @@ import AppContext from 'store/AppContext'
 import { searchService } from 'services'
 import { useFetchApi } from 'hooks'
 
-
 const useSearch = (collection = 'planets') => {
     const [searchResults, setResults] = useState([]);
     const { appDispatch } = useContext(AppContext)
