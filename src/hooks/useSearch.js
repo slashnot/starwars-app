@@ -8,8 +8,10 @@ const useSearch = (collection = 'planets') => {
     const { appDispatch } = useContext(AppContext)
 
     const searchCollection = async (query) => {
-        if (!query)
-            return;
+        if (!query || query === '') {
+            appDispatch({ type: 'CLEAR_SEARCH' })
+            return
+        }
 
         searchService.debounceInput(query, collection, searchService.searchCollection)
             .then(searchResponse => {

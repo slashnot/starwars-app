@@ -44,6 +44,13 @@ const AppReducer = (state, action) => {
                 searchResults: action.payload
             }
 
+        case "CLEAR_SEARCH":
+            return {
+                ...state,
+                searchResults: []
+            }
+
+
         default:
             return state
     }

@@ -3,7 +3,7 @@
 
 const config = {
     baseUrl: 'https://swapi.dev/api',
-    searchDebounceTime: 600
+    searchDebounceTime: 400
 }
 
 export { config }
