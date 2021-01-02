@@ -1,8 +1,9 @@
 // Login Page
-import { Card, CardTitle, CardBody, CardFooter, Button, Form, FormInput, FormGroup } from "shards-react";
 import useAuth from 'hooks/useAuth'
-import AppContext from 'store/AppContext';
-import { useContext } from 'react';
+import AppContext from 'store/AppContext'
+import { useContext } from 'react'
+import './LoginPage.scss'
+import logo from 'assets/img/logo.png'
 
 
 const LoginPage = () => {
@@ -21,25 +22,16 @@ const LoginPage = () => {
 
     return (
         <div className="login-page">
-            <Form onSubmit={handleLoginSubmit}>
-                <Card style={{ maxWidth: "300px" }}>
-                    <CardBody>
-                        <CardTitle>Login</CardTitle>
-                        <FormGroup>
-                            <label htmlFor="#username">Username</label>
-                            <FormInput defaultValue="luke" name="username" id="#username" placeholder="Username" />
-                        </FormGroup>
-                        <FormGroup>
-                            <label htmlFor="#password">Password</label>
-                            <FormInput defaultValue="19BBY" name="password" type="password" id="#password" placeholder="Password" />
-                        </FormGroup>
-                        {appState.loginError && <h4>{appState.loginError}</h4>}
-                    </CardBody>
-                    <CardFooter>
-                        <Button type="submit">Login</Button>
-                    </CardFooter>
-                </Card>
-            </Form>
+            <div className="left col">
+                <img src={logo} className="logo" alt="Star Wars"/>
+            </div>
+            <div className="right col">
+                <div className="login-card">
+                    <div className="login-form">
+                        
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
