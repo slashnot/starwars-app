@@ -1,6 +1,6 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useAuth, useSearch } from 'hooks'
+import { useSearch } from 'hooks'
 
 import {
     FormInput, InputGroup,
@@ -10,15 +10,14 @@ import {
 
 // TopNav UI Component
 const TopNav = props => {
-    const { searchCollection, searchResults } = useSearch('planets')
+    const { searchCollection } = useSearch('planets')
 
-    const handleSearch = (e)=>{
+    const handleSearch = (e) => {
         searchCollection(e.target.value)
     }
 
     return (
         <nav className="top-nav row">
-            {console.log(searchResults)}
             <h3 className="logo col-md-2 col-lg-2">Logo</h3>
             <InputGroup size="md" seamless className="col-md-8 c0l-lg-8">
                 <InputGroupAddon type="prepend">

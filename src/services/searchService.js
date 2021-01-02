@@ -3,20 +3,27 @@ import { config } from 'config'
 
 let timeout = null;
 const searchService = {
-    /* Search collection with debounce
+
+    /* Debounce the input before calling API
     ------------------------------------------------------------ */
-    searchCollection(query) {
+    debounceInput(query, collection, callbackFn) {
         clearTimeout(timeout);
-        // Make a new timeout set to go off in 1000ms (1 second)
-        timeout = setTimeout(function () {
-            console.log('Input Value:', query);
-        }, 4000);
+        const resultsPromise = new Promise((resolve, reject) => {
+            timeout = setTimeout(() => {
+                resolve(callbackFn(query, collection))
+            }, config.searchDebounceTime);
+        })
+        return resultsPromise
     },
 
     /* Search collection from API
     ------------------------------------------------------------ */
-    searchApiCollection(query) {
+    async searchCollection(query, collection) {
+        const url = `${config.baseUrl}/${collection}/?search=${query}`;
+        const response = await fetch(url);
+        const results = await response.json();
 
+        return results
     }
 }
 

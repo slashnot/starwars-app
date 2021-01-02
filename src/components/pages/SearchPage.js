@@ -1,23 +1,28 @@
 // Search Page
-import { useContext, useEffect } from 'react'
-import { TopNav } from "components/ui-components"
+import { useContext } from 'react'
 import AppContext from 'store/AppContext'
-import { useAuth, useSearch } from 'hooks'
+import { TopNav } from "components/ui-components"
+import { useAuth } from 'hooks'
 
-const SearchPage = props => {
-    const { appState } = useContext(AppContext)
+const SearchPage = () => {
     const { logout } = useAuth()
-    const { searchResults, searchCollection } = useSearch('planets')
+    const { appState } = useContext(AppContext)
+    const searchResults = appState.searchResults
 
-    // useEffect(() => {
-    //     searchCollection("Tatoo")
-    // }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    const renderSearchResults = (results) => {
+        if (!results.length)
+            return null
+        return results.map(result => {
+            return <li key={result.id}>{result.name}</li>
+        })
+    }
 
     return (
-
         <div className="search-page">
             <TopNav />
-            <h1>{appState.user}</h1>
+            <ul>
+                {renderSearchResults(searchResults)}
+            </ul>
             <button onClick={() => logout()}>Logout</button>
         </div>
     )

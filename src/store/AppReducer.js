@@ -38,6 +38,12 @@ const AppReducer = (state, action) => {
                 currentUser: null
             }
 
+        case "SEARCH_DONE":
+            return {
+                ...state,
+                searchResults: action.payload
+            }
+
         default:
             return state
     }

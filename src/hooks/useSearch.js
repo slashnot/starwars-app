@@ -1,21 +1,22 @@
 // Hook to provide live search functionality
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import AppContext from 'store/AppContext';
 import { searchService } from 'services'
 
-const baseUrl = 'https://swapi.dev/api'
 const useSearch = (collection = 'planets') => {
-    const [searchResults, setResults] = useState();
+    const [searchResults, setResults] = useState([]);
+    const { appDispatch } = useContext(AppContext)
 
     const searchCollection = async (query) => {
-        searchService.searchCollection(query)
         if (!query)
             return;
 
-        const url = `${baseUrl}/${collection}/?search=${query}`;
-        const response = await fetch(url);
-        const results = await response.json();
+        searchService.debounceInput(query, collection, searchService.searchCollection)
+            .then(searchResponse => {
+                setResults(searchResponse.results);
+                appDispatch({ type: 'SEARCH_DONE', payload: searchResponse.results })
+            })
 
-        setResults(results);
     }
     return { searchCollection, searchResults }
 }
