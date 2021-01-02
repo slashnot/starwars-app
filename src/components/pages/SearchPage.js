@@ -13,7 +13,7 @@ const SearchPage = () => {
         if (!results.length)
             return null
         return results.map(result => {
-            return <li key={result.name}>{result.name}</li>
+            return <li key={result.name}>{result.name} -- {result.population}</li>
         })
     }
 

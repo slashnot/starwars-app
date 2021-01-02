@@ -15,8 +15,9 @@ const useSearch = (collection = 'planets') => {
 
         searchService.debounceInput(query, collection, searchService.searchCollection)
             .then(searchResponse => {
-                setResults(searchResponse.results);
-                appDispatch({ type: 'SEARCH_DONE', payload: searchResponse.results })
+                const sortedResults = searchService.sortCollection(searchResponse.results, 'population')
+                setResults(sortedResults);
+                appDispatch({ type: 'SEARCH_DONE', payload: sortedResults })
             })
 
     }
