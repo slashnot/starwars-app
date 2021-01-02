@@ -2,14 +2,13 @@ import { useContext } from 'react'
 import AppContext from 'store/AppContext'
 import { authService } from 'services'
 import { useFetchApi } from 'hooks/useFetchApi'
-import { config } from 'config'
 
-const baseUrl = config.baseUrl
 const useAuth = () => {
     const { appDispatch } = useContext(AppContext)
     const fetchApi = useFetchApi()
 
-
+    /* CHeck Username from API response
+    --------------------------------------------------- */
     const userLogin = async ({ username }) => {
         const url = `/people/?search=${username}`
         const res = await fetchApi(url)
