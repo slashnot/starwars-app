@@ -3,7 +3,6 @@ import { useState, useContext } from 'react'
 import AppContext from 'store/AppContext'
 import { searchService } from 'services'
 import { useFetchApi } from 'hooks'
-import { config } from 'config'
 
 
 const useSearch = (collection = 'planets') => {
@@ -22,16 +21,14 @@ const useSearch = (collection = 'planets') => {
     const searchCollection = async (query) => {
         if (!query || query === '') {
             appDispatch({ type: 'CLEAR_SEARCH' })
-            return
+            return null
         }
-
         searchService.debounceInput(query, collection, searchCollectionApi)
             .then(searchResponse => {
                 const sortedResults = searchService.sortCollection(searchResponse.results, 'population')
                 setResults(sortedResults);
                 appDispatch({ type: 'SEARCH_DONE', payload: sortedResults })
             })
-
     }
     return { searchCollection, searchResults }
 }

@@ -9,7 +9,7 @@ import {
 } from "shards-react"
 
 // TopNav UI Component
-const TopNav = props => {
+const TopNav = () => {
     const { searchCollection } = useSearch('planets')
 
     const handleSearch = (e) => {
@@ -25,7 +25,7 @@ const TopNav = props => {
                         <FontAwesomeIcon icon={faSearch} />
                     </InputGroupText>
                 </InputGroupAddon>
-                <FormInput onChange={handleSearch} className="border-0" placeholder="Search Planets" />
+                <FormInput onKeyUp={handleSearch} className="border-0" placeholder="Search Planets" />
             </InputGroup>
             <div className="user-info col-md-2 col-lg-2">User Info</div>
         </nav>
