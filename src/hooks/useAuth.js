@@ -52,4 +52,5 @@ const useAuth = () => {
     return { login, logout }
 }
 
+export { useAuth }
 export default useAuth
