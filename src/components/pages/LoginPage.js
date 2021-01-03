@@ -1,6 +1,6 @@
 // Login Page
 import useAuth from 'hooks/useAuth'
-import { LoginForm, LoginFormFooter } from 'components/ui-components'
+import { LoginForm, LoginFormFooter, LoadingProgress } from 'components/ui-components'
 import './LoginPage.scss'
 import logo from 'assets/img/logo.png'
 import github from 'assets/img/github.png'
@@ -38,6 +38,7 @@ const LoginPage = () => {
                             <img className='github' src={github} alt='View project on Git' />
                         </a>
                     </LoginFormFooter>
+                    <LoadingProgress></LoadingProgress>
                 </div>
             </div>
         </div>

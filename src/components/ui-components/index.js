@@ -1,4 +1,4 @@
-export * from 'components/ui-components/login/LoginForm'
-export * from 'components/ui-components/login/LoginFormFooter'
-export * from './LoadingProgress'
+export * from './login/LoginForm'
+export * from './login/LoginFormFooter'
+export * from './loadingProgress/LoadingProgress'
 export * from './TopNav'

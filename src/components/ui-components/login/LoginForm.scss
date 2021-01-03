@@ -8,15 +8,26 @@
     .login-inputs {
         margin-top: 2em;
 
-        .form-footer{
-            display: flex;
+        .form-footer {
+            display        : flex;
             justify-content: flex-end;
 
-            button{
-                padding: 0.56em 3.2em;
+            button {
+                padding      : 0.56em 3.2em;
                 border-radius: 20px;
-                margin-top: 0.8em;
+                margin-top   : 0.8em;
             }
         }
+    }
+
+    .error-messages {
+        background   : #ff668b;
+        color        : #FFF;
+        font-weight  : 600;
+        line-height  : 1em;
+        text-align   : center;
+        padding      : 1em;
+        margin-top   : 1.2em;
+        border-radius: 0.6em;
     }
 }
