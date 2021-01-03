@@ -13,7 +13,8 @@ const useAuth = () => {
         const url = `/people/?search=${username}`
         const res = await fetchApi(url)
         const users = await res.json()
-        return users && users.results.length ? users.results[0] : null
+
+        return users && users.results.length ? users.results : null
     }
 
     /* Login function
@@ -23,7 +24,19 @@ const useAuth = () => {
         appDispatch({ type: 'CLEAR_LOGIN_ERROR' })
 
         return userLogin({ username, password })
-            .then(currentUser => {
+            .then(userResults => {
+                let currentUser = null
+
+                if (userResults && userResults.length > 1) {
+                    
+                    // Multiple users found
+                    appDispatch({ type: 'LOGIN_USERNAME_ERROR', payload: 'Username Invalid. Enter the full username' })
+                    return
+                }
+                else {
+                    currentUser = userResults[0]
+                }
+
                 if (currentUser) {
                     if (authService.isValidUser(currentUser, { username, password })) {
                         // Set  user in app store
