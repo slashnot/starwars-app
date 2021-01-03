@@ -10,29 +10,34 @@
     background-size: 100% 32%, cover;
 
     .col {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-grow      : 1;
+        display        : flex;
+        flex-direction : column;
+        align-items    : center;
         justify-content: center;
 
-        .logo{
-            width: auto;
+        .logo {
+            width : auto;
             height: 16%;
         }
 
-        .login-card{
-            width: 54%;
+        .login-card {
+            width : 54%;
             height: 60%;
 
             background: #FFF;
             box-shadow: 0 2px 52px 4px rgba(0, 0, 0, 0.2);
-            border: solid 1px #d2d2d2;
+            border    : solid 1px #d2d2d2;
 
             padding: 30px;
 
-            .login-form{
+            .login-form {
                 padding: 20px;
+            }
+
+            .github {
+                height: 30px;
+                width : auto;
             }
         }
     }

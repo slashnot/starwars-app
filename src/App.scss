@@ -4,11 +4,12 @@
 
 /* Global Variables
 --------------------------------------------- */
-$color-white: #FFFFFF;
-$color-light: #d2d2d2;
-$color-blue: #0771f9;
-$color-blue-1: rgba(36, 131, 264, 0.36);
+$color-white     : #FFFFFF;
+$color-light     : #d2d2d2;
+$color-blue      : #0771f9;
+$color-blue-1    : rgba(36, 131, 264, 0.36);
 $color-blue-light: #69a6f5;
+$color-text      : #5b6578;
 
 
 $rounded-sm: 6px;
@@ -30,9 +31,21 @@ body,
     margin : 0;
     width  : 100%;
     height : 100%;
+    color  : $color-text;
 
     * {
         box-sizing: border-box;
+    }
+
+    a,
+    p {
+        font-size  : 1.16em;
+        font-weight: 400;
+        color      : $color-text;
+    }
+
+    a {
+        text-decoration: none;
     }
 }
 
@@ -62,31 +75,31 @@ input[type=search] {
 
 input[type=text]::placeholder,
 input[type=password]::placeholder,
-input[type=search]::placeholder{
+input[type=search]::placeholder {
     font-size: 0.9em;
-    opacity: 0.7;
+    opacity  : 0.7;
 }
 
 input[type=text]:focus,
 input[type=password]:focus,
-input[type=search]:focus{
-    border: solid 1px $color-blue;
+input[type=search]:focus {
+    border    : solid 1px $color-blue;
     box-shadow: 0 0 12px $color-blue-1;
 }
 
-button{
-    outline: none;
-    padding: $padding-md $padding-lg;
-    background-color:$color-blue;   
-    border: solid 1px $color-blue-light;
-    box-shadow: 0 2px 28px $color-blue-1;
-    color: $color-white;
-    font-weight: 600;
-    border-radius: $rounded-lg;
+button {
+    outline         : none;
+    padding         : $padding-md $padding-lg;
+    background-color: $color-blue;
+    border          : solid 1px $color-blue-light;
+    box-shadow      : 0 2px 28px $color-blue-1;
+    color           : $color-white;
+    font-weight     : 600;
+    border-radius   : $rounded-lg;
 }
 
-button:focus{
-    outline: 0 !important ;
+button:focus {
+    outline   : 0 !important;
     box-shadow: none !important;
 }
 
