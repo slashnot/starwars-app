@@ -49,6 +49,29 @@ body,
     }
 }
 
+/* CUSTOM SCROLL BAR
+--------------------------------------------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius:6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
 /* Form Elements
 --------------------------------------------- */
 label {

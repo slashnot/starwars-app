@@ -1,0 +1,64 @@
+// Styles for default app layout
+
+.layout-default {
+    display              : grid;
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows   : minmax(80px, auto) 2fr;
+    grid-template-areas  : "header header"
+        "main aside"
+        "main aside";
+
+    // width : 100vw;
+    height    : 100vh;
+    overflow-y: hidden;
+
+    header {
+        height    : 120px;
+        grid-area : header;
+        transition: 0.8s;
+    }
+
+    header.close {
+        grid-area : header;
+        height    : 80px;
+        transition: 0.8s;
+    }
+
+    aside {
+        grid-area: aside;
+    }
+
+    main {
+        grid-area            : main;
+        display              : grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows   : repeat(3, 1fr);
+        grid-gap             : 1em;
+        // height: 100vh;
+        overflow-y           : auto;
+
+        h3:first-child {
+            grid-row   : span 2;
+            grid-column: span 2;
+        }
+
+        h3 {
+            height: 180px;
+        }
+
+        @media(max-width: 768px) {
+            grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+        }
+
+    }
+
+    header,
+    aside,
+    article,
+    footer {
+        background: #eaeaea;
+        padding   : 1em;
+    }
+}
+
+.layout-default:hover {}
