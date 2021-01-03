@@ -1,5 +1,5 @@
 // Login box footer
-import './LoginFormFooter.scss'
+import 'components/ui-components/login/LoginFormFooter.scss'
 
 const LoginFormFooter = ({ children, className, ...rest }) => {
     return (

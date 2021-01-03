@@ -1,5 +1,5 @@
 // Login form presentation component
-import './LoginForm.scss'
+import 'components/ui-components/login/LoginForm.scss'
 
 const LoginForm = ({ title, onLoginSubmit }) => {
 
