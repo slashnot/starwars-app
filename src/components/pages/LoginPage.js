@@ -1,7 +1,5 @@
 // Login Page
-import { useContext } from 'react'
 import useAuth from 'hooks/useAuth'
-import AppContext from 'store/AppContext'
 import { LoginForm, LoginFormFooter } from 'components/ui-components'
 import './LoginPage.scss'
 import logo from 'assets/img/logo.png'
@@ -10,7 +8,7 @@ import github from 'assets/img/github.png'
 
 const LoginPage = () => {
     const { login } = useAuth()
-    const { appState } = useContext(AppContext)
+
 
     /* Handle login form Submit
     --------------------------------------------------- */
@@ -30,8 +28,13 @@ const LoginPage = () => {
                 <div className="login-card">
                     <LoginForm onLoginSubmit={handleLoginSubmit} title='Welcome Sky Walker!' />
                     <LoginFormFooter>
-                        <a href='' title='Need Help?'>Need Help?</a>
-                        <a href='' title='View Project'>
+                        <a href='/' title='Need Help?'>Need Help?</a>
+                        <a
+                            href='https://github.com/slashnot/starwars-app'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            title='View Project'
+                        >
                             <img className='github' src={github} alt='View project on Git' />
                         </a>
                     </LoginFormFooter>
