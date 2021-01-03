@@ -28,7 +28,7 @@ const LoginPage = () => {
             </div>
             <div className="right col">
                 <div className="login-card">
-                    <LoginForm title='Welcome Sky Walker!' />
+                    <LoginForm onLoginSubmit={handleLoginSubmit} title='Welcome Sky Walker!' />
                     <LoginFormFooter>
                         <a href='' title='Need Help?'>Need Help?</a>
                         <a href='' title='View Project'>
