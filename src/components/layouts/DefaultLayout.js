@@ -1,38 +1,47 @@
 // Default layout component
 import './DefaultLayout.scss'
+import logo from 'assets/img/github.png'
 
 const DefaultLayout = () => {
 
     return (
-        <div className='layout-default'>
+        <div className="layout-default">
             <header>
-                <h1>header</h1>
+                <img src={logo} />
+                <img src={logo} />
             </header>
-            <main>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>                
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-                <h3>COL</h3>
-            </main>
-            <aside>Aside</aside>
+            <div className='content'>
+                    <h1>Others</h1>
+                <main>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                    <h3>Main</h3>
+                </main>
+            </div>
+            <aside><h3>Aside</h3></aside>
         </div>
     )
 }
