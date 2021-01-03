@@ -1,0 +1,22 @@
+// Styles for Login Form component
+
+.login-form {
+    .title {
+        text-align: center;
+    }
+
+    .login-inputs {
+        margin-top: 2em;
+
+        .form-footer{
+            display: flex;
+            justify-content: flex-end;
+
+            button{
+                padding: 0.56em 3.2em;
+                border-radius: 20px;
+                margin-top: 0.8em;
+            }
+        }
+    }
+}

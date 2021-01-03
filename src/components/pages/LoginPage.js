@@ -1,7 +1,8 @@
 // Login Page
+import { useContext } from 'react'
 import useAuth from 'hooks/useAuth'
 import AppContext from 'store/AppContext'
-import { useContext } from 'react'
+import LoginForm from 'components/ui-components/LoginForm'
 import './LoginPage.scss'
 import logo from 'assets/img/logo.png'
 
@@ -27,9 +28,7 @@ const LoginPage = () => {
             </div>
             <div className="right col">
                 <div className="login-card">
-                    <div className="login-form">
-                        
-                    </div>
+                    <LoginForm title='Welcome Sky Walker!'/>
                 </div>
             </div>
         </div>
