@@ -1,47 +1,16 @@
 // Default layout component
 import './DefaultLayout.scss'
-import logo from 'assets/img/github.png'
+import logo from 'assets/img/logo-dark.svg'
 
 const DefaultLayout = () => {
 
     return (
         <div className="layout-default">
             <header>
-                <img src={logo} />
-                <img src={logo} />
+                <img className='logo' src={logo} />
+                <input className='search-input' type='search' placeholder='Search for Planets'/>
             </header>
-            <div className='content'>
-                    <h1>Others</h1>
-                <main>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                    <h3>Main</h3>
-                </main>
-            </div>
-            <aside><h3>Aside</h3></aside>
+            
         </div>
     )
 }
