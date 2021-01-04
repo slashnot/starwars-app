@@ -5,13 +5,27 @@ import { useAuth } from 'hooks'
 const UserProfile = ({ profileData }) => {
     const { logout } = useAuth()
 
+    // Creates the user initials
+    const getInitials = (profileData) => {
+        if (profileData.name) {
+            const names = profileData.name.split(' ')
+            const initial = names[0][0] + names[1][0]
+            return initial
+        }
+
+        return 'UN'
+    }
+
+
     return (
         <div className='user-profile'>
             <main>
-                <div className='profile-pic'></div>
+                <div className='profile-pic'>
+                    <span>{getInitials(profileData)}</span>
+                </div>
                 <div className='profile-name'>
                     <h5>Welcome Back!</h5>
-                    <h4>Ramkumar K</h4>
+                    <h4>{profileData.name}</h4>
                 </div>
 
                 {profileData && (
