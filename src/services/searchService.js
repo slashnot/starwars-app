@@ -30,7 +30,7 @@ const searchService = {
     ------------------------------------------------------------ */
     sortCollection(collection, operator) {
         const { filtered, rejected } = this.filterCollection(collection, operator)
-        const results =  filtered.sort((a, b) => {
+        const results = filtered.sort((a, b) => {
             return b[operator] - a[operator]
         })
 
@@ -51,6 +51,12 @@ const searchService = {
         })
         console.log(filtered, rejected)
         return { filtered, rejected }
+    },
+
+    /* Get random array items
+    ------------------------------------------------------------ */
+    getRandomItem(arr) {
+        return arr[Math.floor((Math.random() * arr.length))]
     },
 }
 

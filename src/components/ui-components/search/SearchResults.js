@@ -1,12 +1,16 @@
 // Component that displays the search results
+
 import { useContext } from 'react'
 import AppContext from 'store/AppContext'
+import { searchService } from 'services'
 import { LoadingProgress, Card, PlanetLoader } from 'components/ui-components'
 import './SearchResults.scss'
+import config from 'config'
 
 const SearchResults = ({ results }) => {
     const { appState } = useContext(AppContext)
     const searchResults = results ? results : appState.searchResults
+
 
     // Template loop rendering function
     const renderSearchResults = (results) => {
@@ -14,8 +18,14 @@ const SearchResults = ({ results }) => {
             return null
         return results.map(result => {
             return (
-                <Card key={result.name} title="Hello">
-                    <h4>{result.name} -- {result.population}</h4>
+                <Card key={result.name} thumb={searchService.getRandomItem(config.planetImages)}>
+                    <h5>{result.name}</h5>
+                    <p className='info'>
+                        <strong>
+                            Population
+                        </strong>
+                        {parseFloat(result.population).toLocaleString('en-IN')}
+                    </p>
                 </Card>
             )
         })

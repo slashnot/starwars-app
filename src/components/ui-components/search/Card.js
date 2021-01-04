@@ -1,17 +1,12 @@
 // Card component to display data in card
 import './Card.scss'
 
-const Card = ({ className, title, footer, children }) => {
+const Card = ({ className = 'null-class', thumb, children }) => {
     return (
         <div className={`${className} result-card`}>
-            <div className='result-card-title'>
-                {title}
-            </div>
+            <img src={thumb} className='result-card-img' />
             <div className='result-card-content'>
                 {children}
-            </div>
-            <div className='result-card-footer'>
-                {footer}
             </div>
         </div>
     )
