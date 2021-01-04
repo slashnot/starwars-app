@@ -20,7 +20,7 @@
     // background-size: 82% 100%;
     position             : relative;
     display              : grid;
-    grid-template-columns: 5fr 1.1fr;
+    grid-template-columns: 5fr 1.4fr;
     grid-template-rows   : minmax(60px, auto) 1fr;
     grid-template-areas  : "header aside"
         "main aside"
