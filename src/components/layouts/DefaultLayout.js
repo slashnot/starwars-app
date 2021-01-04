@@ -8,7 +8,9 @@ const DefaultLayout = () => {
         <div className="layout-default">
             <header className='header'>
                 <img className='logo' src={logo} />
-                <input className='search-input' type='search' placeholder='Search for Planets' />
+                <div className='search-box'>
+                    <input className='search-input' type='search' placeholder='Search for Planets' />
+                </div>
             </header>
 
             <main className='search-container'>

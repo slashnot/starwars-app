@@ -59,28 +59,34 @@
             height : 100%;
         }
 
+        .search-box {
+            width   : 100%;
+            margin  : 0 2em;
+            position: relative;
+        }
+
         input {
             position     : relative;
-            width        : 100%;
-            margin       : 0 2em;
             line-height  : 2em;
             font-size    : 1.1em;
             border-radius: 3em;
-            padding      : 0.6em 2em;
+            padding      : 0.6em 2em 0.6em 4em;
             box-shadow   : 0 0 26px rgba(0, 0, 0, 0.1);
             border       : solid 1px rgba(0, 0, 0, 0.1);
             transition   : 0.3s;
         }
 
-        input::before {
-            content   : '';
-            position  : absolute;
-            background: url(/assets/img/search.svg) center center no-repeat;
-            width     : 65px;
-            height    : 65px;
-            left      : 0;
-            top       : 0;
-            z-index: 1000;
+        .search-box::after {
+            content        : '';
+            background     : url(/assets/img/search.png) center center no-repeat;
+            background-size: contain;
+            width          : 24px;
+            height         : 24px;
+            position       : absolute;
+            left          : 3%;
+            top            : 35%;
+            display        : block;
+            z-index        : 999;
         }
 
         input:focus {
