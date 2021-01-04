@@ -1,104 +1,111 @@
 // Styles for user profile
+// inset 0px -10px 20px rgba(75, 54, 54, 0.2)
 
-.user-profile {
-    position       : relative;
-    padding        : 2.5em;
-    height         : 100%;
-    display        : flex;
-    flex-direction : column;
-    justify-content: space-between;
-    align-items    : center;
-    overflow-y     : auto;
+aside.profile {
+    grid-area : aside;
+    background: #f1f4f7;
+
+    .user-profile {
+        position       : relative;
+        padding        : 2.5em;
+        height         : 100%;
+        display        : flex;
+        flex-direction : column;
+        justify-content: space-between;
+        align-items    : center;
+        overflow-y     : auto;
+        box-shadow     : inset 0px -10px 20px rgba(75, 54, 54, 0.2);
 
 
-    h5 {
-        margin   : 0;
-        font-size: 1em;
-    }
+        h5 {
+            margin   : 0;
+            font-size: 1em;
+        }
 
-    h4 {
-        font-size: 1.4em;
-        margin   : 0;
-    }
+        h4 {
+            font-size: 1.4em;
+            margin   : 0;
+        }
 
-    .separator {
-        display   : block;
-        height    : 1px;
-        width     : 100%;
-        margin    : 0.8em 0;
-        background: rgba(0, 0, 0, 0.15);
-    }
+        .separator {
+            display   : block;
+            height    : 1px;
+            width     : 100%;
+            margin    : 0.8em 0;
+            background: rgba(0, 0, 0, 0.15);
+        }
 
-    main {
-        .profile-pic {
-            width        : 98px;
-            height       : 98px;
-            background   : sandybrown;
-            border-radius: 50%;
-            box-shadow   : 0px 0px 12px rgba(75, 54, 54, 0.1);
-            margin       : 0 auto;
-            margin-bottom: 0.8em;
+        main {
+            .profile-pic {
+                width        : 98px;
+                height       : 98px;
+                background   : sandybrown;
+                border-radius: 50%;
+                box-shadow   : 0px 0px 12px rgba(75, 54, 54, 0.1);
+                margin       : 0 auto;
+                margin-bottom: 0.8em;
 
-            display        : flex;
-            justify-content: center;
-            align-items    : center;
+                display        : flex;
+                justify-content: center;
+                align-items    : center;
 
-            span {
-                display    : block;
-                color      : #FFF;
-                font-size  : 2.3em;
-                font-weight: 500;
-                text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+                span {
+                    display    : block;
+                    color      : #FFF;
+                    font-size  : 2.3em;
+                    font-weight: 500;
+                    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+                }
+            }
+
+            .profile-name {
+                text-align: center;
+
+                h4 {
+                    text-transform: capitalize;
+                }
+            }
+
+            .profile-details {
+                display        : flex;
+                flex-direction : row;
+                flex-wrap      : wrap;
+                justify-content: space-between;
+                margin         : 0;
+
+                h5,
+                p {
+                    width  : 50%;
+                    margin : 0.4em 0;
+                    padding: 0 0.4em;
+                }
+
+                h5 {
+                    text-align    : left;
+                    text-transform: uppercase;
+                    font-size     : 1em;
+                    font-weight   : 500;
+                }
+
+                p {
+                    text-transform: capitalize;
+                    text-align    : right;
+                }
             }
         }
 
-        .profile-name {
-            text-align: center;
-
-            h4 {
-                text-transform: capitalize;
-            }
-        }
-
-        .profile-details {
-            display        : flex;
-            flex-direction : row;
-            flex-wrap      : wrap;
-            justify-content: space-between;
-            margin         : 0;
-
-            h5,
-            p {
-                width  : 50%;
-                margin : 0.4em 0;
-                padding: 0 0.4em;
+        footer {
+            button {
+                border-radius: 20px;
+                border       : solid 1px #69a6f5;
+                box-shadow   : 0 2px 28px rgba(36, 131, 264, 0.36);
+                padding      : 0.48em 2.4em;
             }
 
-            h5 {
-                text-align    : left;
-                text-transform: uppercase;
-                font-size     : 1em;
-                font-weight   : 500;
+            button:focus {
+                outline   : 0 !important;
+                box-shadow: none !important;
             }
-
-            p {
-                text-transform: capitalize;
-                text-align    : right;
-            }
-        }
-    }
-
-    footer {
-        button {
-            border-radius: 20px;
-            border       : solid 1px #69a6f5;
-            box-shadow   : 0 2px 28px rgba(36, 131, 264, 0.36);
-            padding      : 0.48em 2.4em;
-        }
-
-        button:focus {
-            outline   : 0 !important;
-            box-shadow: none !important;
         }
     }
 }
