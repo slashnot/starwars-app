@@ -7,7 +7,7 @@ import { PublicRoute, PrivateRoute } from 'components/auth'
 
 // Pages
 import { LoginPage } from "components/pages/LoginPage"
-import { SearchPage } from "components/pages/SearchPage"
+// import { SearchPage } from "components/pages/SearchPage"
 
 // Layouts
 import { DefaultLayout } from 'components/layouts'

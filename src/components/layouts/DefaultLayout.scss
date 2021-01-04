@@ -32,46 +32,4 @@
         grid-area : aside;
         background: #f1f4f7;
     }
-
-    main.search-container {
-        grid-area : main;
-        overflow-y: scroll;
-        height    : 90vh;
-        box-shadow: 0px 20px 20px rgba(75, 54, 54, 0.2);
-
-        section.search-results {
-            padding: 2.5em;
-
-            display                 : grid;
-            grid-template-columns   : repeat(12, 1fr);
-            // grid-template-rows   : auto, minmax(100px, 1fr);
-            grid-template-rows      : auto;
-            grid-auto-flow          : dense;
-            grid-gap                : 1em;
-
-            height    : auto;
-            overflow-y: visible;
-
-            h3 {
-                padding    : 2em;
-                margin     : 0;
-                box-shadow : 0 0 12px rgba(0, 0, 0, 0.15);
-                grid-column: span 4;
-                background : #FFF;
-            }
-
-            h3:nth-child(1) {
-                grid-column: span 8;
-                grid-row   : span 2;
-            }
-
-            h3:nth-child(n+7) {
-                grid-column: span 6;
-            }
-
-            h1 {
-                grid-column: span 12;
-            }
-        }
-    }
 }

@@ -1,0 +1,18 @@
+// Styles for Card Component
+
+.result-card {
+    padding    : 1.2em;
+    margin     : 0;
+    box-shadow : 0 0 12px rgba(0, 0, 0, 0.15);
+    grid-column: span 4;
+    background : #FFF;
+}
+
+.result-card:nth-child(1) {
+    grid-column: span 8;
+    grid-row   : span 2;
+}
+
+.result-card:nth-child(n+7) {
+    grid-column: span 6;
+}

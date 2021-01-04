@@ -13,8 +13,8 @@ const Header = () => {
 
     return (
         <header className='header'>
-            <img className='logo' src={logo} />
-            <SearchInput onChange={e => console.log(e.target.value)} />
+            <img className='logo' alt='Sky Wars' src={logo} />
+            <SearchInput onChange={handleSearch} />
         </header>
     )
 }

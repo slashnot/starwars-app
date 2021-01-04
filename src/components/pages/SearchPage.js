@@ -1,7 +1,6 @@
 // Search Page
 import { useContext } from 'react'
 import AppContext from 'store/AppContext'
-import { Header } from "components/ui-components"
 import { useAuth } from 'hooks'
 
 const SearchPage = () => {
