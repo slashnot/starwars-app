@@ -75,6 +75,17 @@ const AppReducer = (state, action) => {
                 isApiLoading: false
             }
 
+            case "SHOW_HEADER":
+            return {
+                ...state,
+                headerClass: action.payload
+            }
+
+            case "HIDE_HEADER":
+            return {
+                ...state,
+                headerClass: ''
+            }
 
         default:
             return state

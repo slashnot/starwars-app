@@ -8,7 +8,7 @@ import './SearchResults.scss'
 import config from 'config'
 
 const SearchResults = ({ results }) => {
-    const { appState } = useContext(AppContext)
+    const { appState, appDispatch } = useContext(AppContext)
     const searchResults = results ? results : appState.searchResults
 
 
@@ -31,9 +31,18 @@ const SearchResults = ({ results }) => {
         })
     }
 
+    const scrollHandler = (e) => {
+        if (e.target.scrollTop) {
+            appDispatch({ type: 'SHOW_HEADER', payload: 'on-scroll' })
+        }
+        else {
+            appDispatch({ type: 'HIDE_HEADER' })
+        }
+    }
+
     return (
         <>
-            <main className='search-container'>
+            <main className='search-container' onScroll={scrollHandler}>
                 {searchResults.length ? (
                     <>
                         <h4 className='section-title'>Top Planets</h4>

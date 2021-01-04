@@ -7,7 +7,8 @@ const appStore = {
     loginError: '',
     searchResults: [],
     searchMessage: 'Search for Planets',
-    isApiLoading: false
+    isApiLoading: false,
+    headerClass: ''
 }
 
 export default appStore
