@@ -1,4 +1,4 @@
-.App{
+.App {
     overflow: hidden;
 }
 
@@ -40,51 +40,70 @@
         grid-area: aside;
     }
 
-    .content{
-        grid-area: main;
+    .content {
+        grid-area : main;
         overflow-y: scroll;
-        height: 86vh;
+        height    : 86vh;
 
         main {
-            padding  : 2.5em;
-    
+            padding: 2.5em;
+
             display              : grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows   : repeat(12, 200px);
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-rows   : repeat(6, minmax(100px, 1fr));
+            grid-gap             : 1rem;
             grid-auto-flow       : dense;
-            grid-gap             : 1em;
-    
+
             height    : auto;
             overflow-y: visible;
-    
+
             h3 {
-                padding   : 2em;
-                margin    : 0;
-                box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
-                grid-column: span 4;
+                padding       : 0.8em;
+                margin        : 0;
+                box-shadow    : 0 0 12px rgba(0, 0, 0, 0.15);
+                // grid-column: span 4;
             }
-    
+
+            h3:nth-child(n+8) {
+                grid-column: span 2;
+                grid-row   : span 1;
+            }
+
             h3:nth-child(1) {
-                grid-column: span 8;
+                grid-column: span 3;
                 grid-row   : span 2;
             }
-    
-            h3:nth-child(n+7){
-                grid-column: span 6;
-            }
-    
+
             // h3:last-child{
             //     opacity: 0;
             //     padding: 0.3em;
             // }
-    
-            h1{
-                grid-column: span 12;
+
+
+                // @media (min-width: 1221px) and (max-width: 1200px) {
+                //     h3:nth-child(n+8) {
+                //         grid-column: span 3;
+                //         grid-row   : span 1;
+                //     }
+                // }
+
+            @media (max-width: 1420px) {
+                h3:nth-child(n+8) {
+                    grid-column: span 3;
+                    grid-row   : span 1;
+                }
+            }
+
+            @media (min-width: 1421px) and (max-width: 1920px) {
+                h3:nth-child(n+8) {
+                    grid-column: span 2;
+                    grid-row   : span 1;
+                }
             }
         }
     }
 
-    
+
 
     footer {
         grid-area: footer;

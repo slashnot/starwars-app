@@ -11,7 +11,7 @@ const DefaultLayout = () => {
                 <img src={logo} />
             </header>
             <div className='content'>
-                    <h1>Others</h1>
+                <h1>Others</h1>
                 <main>
                     <h3>Main</h3>
                     <h3>Main</h3>
