@@ -7,18 +7,24 @@ import { LoadingProgress, Card, PlanetLoader } from 'components/ui-components'
 import './SearchResults.scss'
 import config from 'config'
 
+// Shuffle planet images randomly
+const shuffleImages = config.planetImages.sort(() => Math.random() - 0.5);
+
+//---------------------------------------------------------------------------
+
 const SearchResults = ({ results }) => {
     const { appState, appDispatch } = useContext(AppContext)
     const searchResults = results ? results : appState.searchResults
 
 
-    // Template loop rendering function
+    /* Template loop rendering function
+    ----------------------------------------------------------------------- */
     const renderSearchResults = (results) => {
         if (!results.length)
             return null
-        return results.map(result => {
+        return results.map((result, i) => {
             return (
-                <Card key={result.name} thumb={searchService.getRandomItem(config.planetImages)}>
+                <Card key={result.name} thumb={shuffleImages[i]}>
                     <h5>{result.name}</h5>
                     <p className='info'>
                         <strong>
@@ -31,6 +37,8 @@ const SearchResults = ({ results }) => {
         })
     }
 
+    /* Handles the scroll and adds dynamic header styles
+     ----------------------------------------------------------------------- */
     const scrollHandler = (e) => {
         if (e.target.scrollTop) {
             appDispatch({ type: 'SHOW_HEADER', payload: 'on-scroll' })
