@@ -1,0 +1,47 @@
+// Styles for Header
+
+header.header {
+    grid-area : header;
+    position  : relative;
+    padding   : 0.3em 2em;
+    height    : 7.2em;
+    box-shadow: none;
+    background: transparent;
+
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    z-index        : 99;
+
+    transition: 0.8s;
+
+    img {
+        display: block;
+        padding: 1.5em 2em;
+        margin : 0;
+        width  : auto;
+        height : 100%;
+    }
+
+    img.close {
+        display: block;
+        padding: 1em 2em;
+        margin : 0;
+        width  : auto;
+        height : 100%;
+    }
+}
+
+header.on-scroll {
+    height    : 5.2em;
+    box-shadow: 0 0 20px rgba(75, 54, 54, 0.2);
+    background: #FFF;
+
+    img {
+        display: block;
+        padding: 1em 2em;
+        margin : 0;
+        width  : auto;
+        height : 100%;
+    }
+}

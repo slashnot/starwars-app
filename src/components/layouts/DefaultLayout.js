@@ -1,18 +1,12 @@
 // Default layout component
+import { Header } from 'components/ui-components'
 import './DefaultLayout.scss'
-import logo from 'assets/img/logo-dark.svg'
 
 const DefaultLayout = () => {
 
     return (
         <div className="layout-default">
-            <header className='header'>
-                <img className='logo' src={logo} />
-                <div className='search-box'>
-                    <input className='search-input' type='search' placeholder='Search for Planets' />
-                </div>
-            </header>
-
+            <Header />
             <main className='search-container'>
                 <section className='search-results'>
                     <h3>content</h3>

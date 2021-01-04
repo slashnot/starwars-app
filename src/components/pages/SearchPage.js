@@ -1,7 +1,7 @@
 // Search Page
 import { useContext } from 'react'
 import AppContext from 'store/AppContext'
-import { TopNav } from "components/ui-components"
+import { Header } from "components/ui-components"
 import { useAuth } from 'hooks'
 
 const SearchPage = () => {
@@ -19,7 +19,6 @@ const SearchPage = () => {
 
     return (
         <div className="search-page">
-            <TopNav />
             <ul>
                 {renderSearchResults(searchResults)}
             </ul>
