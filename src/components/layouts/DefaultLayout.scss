@@ -18,6 +18,7 @@
 .layout-default {
     // background: url(/assets/img/search-bg.jpg) 0em top no-repeat;
     // background-size: 82% 100%;
+    position             : relative;
     display              : grid;
     grid-template-columns: 5fr 1.1fr;
     grid-template-rows   : minmax(60px, auto) 1fr;
@@ -29,10 +30,11 @@
 
     header {
         grid-area : header;
+        position  : relative;
         padding   : 0.3em 2em;
         height    : 7.2em;
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-        background: #FFF;
+        box-shadow: none;
+        background: transparent;
 
         display        : flex;
         justify-content: space-between;
@@ -58,6 +60,7 @@
         }
 
         input {
+            position     : relative;
             width        : 100%;
             margin       : 0 2em;
             line-height  : 2em;
@@ -69,6 +72,17 @@
             transition   : 0.3s;
         }
 
+        input::before {
+            content   : '';
+            position  : absolute;
+            background: url(/assets/img/search.svg) center center no-repeat;
+            width     : 65px;
+            height    : 65px;
+            left      : 0;
+            top       : 0;
+            z-index: 1000;
+        }
+
         input:focus {
             box-shadow: 0 0 26px rgba(36, 131, 264, 0.26);
             transition: 0.3s;
@@ -76,7 +90,9 @@
     }
 
     header.on-scroll {
-        height: 5.2em;
+        height    : 5.2em;
+        box-shadow: -12px 0 12px rgba(0, 0, 0, 0.2);
+        background: #FFF;
 
         img {
             display: block;
