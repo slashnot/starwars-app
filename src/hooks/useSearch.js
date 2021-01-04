@@ -19,11 +19,19 @@ const useSearch = (collection = 'planets') => {
 
     const searchCollection = async (query) => {
         if (!query || query === '') {
+            appDispatch({ type: 'CLEAR_SEARCH_MESSAGE', payload: `Search for ${collection}` })
             appDispatch({ type: 'CLEAR_SEARCH' })
+
             return null
         }
         searchService.debounceInput(query, collection, searchCollectionApi)
             .then(searchResponse => {
+                // Set search result message
+                if (!searchResponse.results.length)
+                    appDispatch({ type: 'SEARCH_NO_RESULTS', payload: `No ${collection} found` })
+                else
+                    appDispatch({ type: 'CLEAR_SEARCH_MESSAGE', payload: `Search for ${collection}` })
+
                 const sortedResults = searchService.sortCollection(searchResponse.results, 'population')
                 setResults(sortedResults);
                 appDispatch({ type: 'SEARCH_DONE', payload: sortedResults })

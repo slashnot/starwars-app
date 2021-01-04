@@ -6,6 +6,7 @@ const appStore = {
     currentUser: {},
     loginError: '',
     searchResults: [],
+    searchMessage: 'Search for Planets',
     isApiLoading: false
 }
 

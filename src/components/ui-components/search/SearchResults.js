@@ -8,6 +8,7 @@ const SearchResults = ({ results }) => {
     const { appState } = useContext(AppContext)
     const searchResults = results ? results : appState.searchResults
 
+    // Template loop rendering function
     const renderSearchResults = (results) => {
         if (!results.length)
             return null
@@ -22,7 +23,6 @@ const SearchResults = ({ results }) => {
 
     return (
         <>
-
             <main className='search-container'>
                 {searchResults.length ? (
                     <>
@@ -33,8 +33,8 @@ const SearchResults = ({ results }) => {
                     </>
                 ) :
                     <div className='search-msg'>
-                        <PlanetLoader style={{width: '100px', height: '100px'}} loadingText='Searching Planets' />
-                        <h4>Search for Planets</h4>
+                        <PlanetLoader style={{ width: '100px', height: '100px' }} loadingText='Searching Planets' />
+                        <h4>{appState.searchMessage}</h4>
                     </div>
                 }
                 <LoadingProgress />

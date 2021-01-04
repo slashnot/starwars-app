@@ -7,7 +7,7 @@ const UserProfile = ({ profileData }) => {
 
     // Creates the user initials
     const getInitials = (profileData) => {
-        if (profileData.name) {
+        if (profileData && profileData.name) {
             const names = profileData.name.split(' ')
             const initial = names[0][0] + names[1][0]
             return initial
@@ -25,7 +25,7 @@ const UserProfile = ({ profileData }) => {
                 </div>
                 <div className='profile-name'>
                     <h5>Welcome Back!</h5>
-                    <h4>{profileData.name}</h4>
+                    <h4>{profileData && profileData.name}</h4>
                 </div>
 
                 {profileData && (

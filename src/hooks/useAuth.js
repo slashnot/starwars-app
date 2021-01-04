@@ -34,7 +34,7 @@ const useAuth = () => {
                     return
                 }
                 else {
-                    currentUser = userResults[0]
+                    currentUser = userResults ? userResults[0] : null
                 }
 
                 if (currentUser) {
