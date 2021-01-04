@@ -3,11 +3,11 @@ import './PlanetLoader.scss'
 
 const PlanetLoader = ({loadingText = "Loading..."}) => {
     return (
-        <div class="content planet-loader">
-            <div class="planet">
-                <div class="ring"></div>
-                <div class="cover-ring"></div>
-                <div class="spots">
+        <div className="content planet-loader">
+            <div className="planet">
+                <div className="ring"></div>
+                <div className="cover-ring"></div>
+                <div className="spots">
                     <span></span>
                     <span></span>
                     <span></span>
