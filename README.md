@@ -1,3 +1,12 @@
+# Star Wars React App
+
+![](https://cdn.worldvectorlogo.com/logos/star-wars.svg)
+
+## About this React App
+React app that consumes swappi star wars api. The swappi api is hosted in local server to add extra data and features to the server api.
+
+...
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
