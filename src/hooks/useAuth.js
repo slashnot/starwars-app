@@ -10,7 +10,7 @@ const useAuth = () => {
     /* CHeck Username from API response
     --------------------------------------------------- */
     const userLogin = async ({ username }) => {
-        const url = `/people/?search=${username}`
+        const url = `/people/?name=${username}`
         const res = await fetchApi(url)
         const users = await res.json()
 
