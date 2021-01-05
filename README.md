@@ -5,6 +5,7 @@
 ## About this React App
 React app that consumes swappi star wars api. The swappi api is hosted in local server to add extra data and features to the server api.
 
+### [DEMO HERE](http://https://starwars-app-krk.netlify.app/ "DEMO HERE")
 ...
 
 # Getting Started with Create React App
