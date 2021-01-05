@@ -2,7 +2,6 @@
 
 import { useContext } from 'react'
 import AppContext from 'store/AppContext'
-import { searchService } from 'services'
 import { LoadingProgress, Card, PlanetLoader } from 'components/ui-components'
 import './SearchResults.scss'
 import config from 'config'
