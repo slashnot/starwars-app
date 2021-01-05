@@ -26,6 +26,8 @@ const useSearch = (collection = 'planets') => {
         }
         searchService.debounceInput(query, collection, searchCollectionApi)
             .then(searchResponse => {
+                appDispatch({type: 'RESET_GLOBAL_ERRORS'})
+
                 // Set search result message
                 if (!searchResponse.results.length)
                     appDispatch({ type: 'SEARCH_NO_RESULTS', payload: `No ${collection} found` })
@@ -35,6 +37,9 @@ const useSearch = (collection = 'planets') => {
                 const sortedResults = searchService.sortCollection(searchResponse.results, 'population')
                 setResults(sortedResults);
                 appDispatch({ type: 'SEARCH_DONE', payload: sortedResults })
+            })
+            .catch((err) => {
+                appDispatch({type: 'SET_GLOBAL_ERROR', payload: 'Max request limit reached'})
             })
     }
     return { searchCollection, searchResults }

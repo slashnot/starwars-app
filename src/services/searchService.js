@@ -2,6 +2,8 @@
 import { config } from 'config'
 
 let timeout = null;
+let requestTimeout = null;
+let requestCount = 0
 const searchService = {
 
     /* Debounce the input before calling API
@@ -10,7 +12,13 @@ const searchService = {
         clearTimeout(timeout);
         const resultsPromise = new Promise((resolve, reject) => {
             timeout = setTimeout(() => {
-                resolve(callbackFn(query, collection))
+                if (this.canSendRequest()) {
+                    resolve(callbackFn(query, collection))
+                }
+                else {
+                    console.log("MAX REACHD")
+                    reject('Max reached')
+                }
             }, config.searchDebounceTime);
         })
         return resultsPromise
@@ -19,11 +27,15 @@ const searchService = {
     /* Search collection from API
     ------------------------------------------------------------ */
     async searchCollection(query, collection) {
-        const url = `${config.baseUrl}/${collection}/?search=${query}`;
-        const response = await fetch(url);
-        const results = await response.json();
+        if (this.canSendRequest()) {
+            const url = `${config.baseUrl}/${collection}/?search=${query}`;
+            const response = await fetch(url);
+            const results = await response.json();
 
-        return results
+            return results
+        }
+
+        return []
     },
 
     /* Sort collection by operator
@@ -51,6 +63,33 @@ const searchService = {
         })
         console.log(filtered, rejected)
         return { filtered, rejected }
+    },
+
+    /* Check whether the max request is reached
+    ------------------------------------------------------------ */
+    canSendRequest() {
+        const user = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')) : {}
+
+        if (config.superUsers.includes(user.name))
+            return true
+
+        if (!requestTimeout) {
+            requestTimeout = setTimeout(() => {
+                requestTimeout = null
+                requestCount = 0
+            }, config.requestTimeOutDuration)
+            requestCount++
+            return true
+        }
+
+        if ((requestCount <= config.maxRequests - 1) && requestTimeout) {
+            requestCount++
+            return true
+        }
+        else {
+            console.log('Max Reached')
+            return false
+        }
     },
 
     /* Get random array items

@@ -23,7 +23,7 @@ const SearchResults = ({ results }) => {
             return null
         return results.map((result, i) => {
             return (
-                <Card key={result.id} thumb={shuffleImages[i]}>
+                <Card key={i} thumb={shuffleImages[i]}>
                     <h5>{result.name}</h5>
                     <div className='card-info'>
                         <div className='info-col'>

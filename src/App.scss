@@ -47,6 +47,20 @@ body,
     a {
         text-decoration: none;
     }
+
+    .global-errors {
+        position   : absolute;
+        left       : 2em;
+        bottom     : 2em;
+        width      : calc(71%);
+        background : red;
+        padding    : 1em;
+        color      : #FFF;
+        font-size  : 1.1em;
+        font-weight: 500;
+        text-align : center;
+        border-radius: 6px;
+    }
 }
 
 /* CUSTOM SCROLL BAR
@@ -62,8 +76,8 @@ body,
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius:6px;
+    background   : rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
 }
 
 /* Handle on hover */
