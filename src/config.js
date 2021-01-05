@@ -7,7 +7,7 @@ const config = {
     planetImages,
     requestTimeOutDuration: 60000,
     maxRequests: 15,
-    superUsers:['Luke Skywalker']
+    superUsers:['Luke']
 }
 
 export { config }

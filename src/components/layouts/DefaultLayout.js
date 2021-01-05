@@ -10,6 +10,7 @@ const DefaultLayout = () => {
     return (
         <div className="layout-default">
             <Header />
+            {/* Nested routes */}
             <SearchPage />
             <aside className='profile'>
                 <UserProfile profileData={profileData} />
