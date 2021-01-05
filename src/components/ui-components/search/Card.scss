@@ -7,6 +7,7 @@
     grid-column             : span 4;
     display                 : grid;
     grid-template-columns   : minmax(0, auto) 3fr;
+    grid-template-rows      : auto;
     // grid-template-rows   : minmax(0px, 1fr) 3fr minmax(0px, 1fr);
     grid-column-gap         : 1em;
     align-items             : flex-start;
@@ -27,6 +28,8 @@
     .result-card-content {
         grid-area: content;
         padding  : 1.2em;
+        width    : 100%;
+        height   : 100%;
     }
 }
 
@@ -36,9 +39,8 @@
     grid-template-columns: 2fr 3fr;
 
     .result-card-img-container {
-        width     : 100%;
-        height    : 100%;
-        object-fit: contain;
+        width : 100%;
+        height: 100%;
 
         .result-card-img {
             justify-self: flex-start;
@@ -57,11 +59,11 @@
         }
 
         .card-info {
-            display        : flex;
-            flex-direction : row;
-            justify-content: space-between;
-            padding        : 1em 0.4em;
-            border-bottom  : solid 1px rgba(0, 0, 0, 0.15);
+            display           : flex;
+            flex-direction    : row;
+            justify-content   : space-between;
+            padding           : 1em 0.4em;
+            border-bottom     : solid 1px rgba(0, 0, 0, 0.15);
             // border-top     : solid 1px rgba(0, 0, 0, 0.15);
 
             margin: 1em 0 1.5em;
@@ -72,7 +74,7 @@
                 justify-content: center;
 
                 h6 {
-                    color         : rgba(0, 0, 0, 0.4);
+                    color         : coral;
                     text-transform: uppercase;
                     font-size     : 0.9em;
                     font-weight   : 700;
@@ -81,6 +83,7 @@
                 }
 
                 p.info {
+                    margin     : 0;
                     font-size  : 1.4em;
                     font-weight: 400;
                     color      : #49505d;
@@ -93,7 +96,7 @@
             flex-direction : row;
             justify-content: space-around;
             align-items    : center;
-            margin-right: 0.4em;
+            margin-right   : 0.4em;
 
             .info-col {
                 display       : flex;
@@ -109,6 +112,7 @@
                 }
 
                 p.info {
+                    margin: 0;
                     text-transform: uppercase;
                     font-weight   : 500;
                     font-size     : 0.9em;
@@ -119,22 +123,81 @@
     }
 }
 
-.result-card:nth-child(n+8) {
-    grid-column: span 6;
-    align-self : center;
+.result-card:nth-child(n+2) {
+    grid-template-columns: 8em 1fr;
+    grid-template-rows   : 112px;
 
-    .result-card-img {
-        display: none;
+    h5 {
+        text-transform: uppercase;
+        font-size     : 1.1em;
+        font-weight   : 500;
+        color         : #49505d;
+        margin-bottom : 0.2em;
+        text-transform: capitalize;
+    }
+
+    .result-card-img-container {
+        width : 100%;
+        height: 100%;
+
+        .result-card-img {
+            justify-self: flex-start;
+            width       : 100%;
+            height      : 100%;
+            max-height  : 8em;
+            object-fit  : cover;
+        }
     }
 
     .result-card-content {
-        h5 {
-            font-size  : 1.1em;
-            font-weight: 500;
+        padding: 1em 1em 1em 0.3em;
+        width  : 100%;
+        height : 100%;
+
+        .info-col:first-child {
+            display: block;
+
+            p.info {
+                margin     : 0.6em 0 0;
+                font-size  : 1.1em;
+                line-height: 1em;
+                font-weight: 500;
+            }
+
+            h6 {
+                color         : coral;
+                font-size     : 0.8em;
+                text-transform: uppercase;
+                font-weight   : 700;
+            }
         }
 
-        p.info {
-            font-size: 0.9em !important;
+        .info-col {
+            display: none;
+        }
+
+        .card-info-footer {
+            display: none;
         }
     }
 }
+
+// .result-card:nth-child(n+8) {
+//     grid-column: span 6;
+//     align-self : center;
+
+//     .result-card-img {
+//         display: none;
+//     }
+
+//     .result-card-content {
+//         h5 {
+//             font-size  : 1.1em;
+//             font-weight: 500;
+//         }
+
+//         p.info {
+//             font-size: 0.9em !important;
+//         }
+//     }
+// }

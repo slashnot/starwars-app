@@ -57,10 +57,10 @@ const SearchResults = ({ results }) => {
                             <h6>Climate:</h6>
                             <p className='info'>{result.climate}</p>
                         </div>
-                        <div className='info-col'>
+                        {/* <div className='info-col'>
                             <h6>Water:</h6>
                             <p className='info'>{result.surface_water}</p>
-                        </div>
+                        </div> */}
                     </div>
                 </Card>
             )
