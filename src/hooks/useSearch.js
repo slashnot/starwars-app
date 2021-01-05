@@ -10,7 +10,7 @@ const useSearch = (collection = 'planets') => {
     const fetchApi = useFetchApi()
 
     const searchCollectionApi = async (query, collection) => {
-        const url = `/${collection}/?search=${query}`;
+        const url = `/${collection}?name_like=${query}`;
         const response = await fetchApi(url);
         const results = await response.json();
 

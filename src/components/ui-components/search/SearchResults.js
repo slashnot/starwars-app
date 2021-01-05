@@ -24,14 +24,44 @@ const SearchResults = ({ results }) => {
             return null
         return results.map((result, i) => {
             return (
-                <Card key={result.name} thumb={shuffleImages[i]}>
+                <Card key={result.id} thumb={shuffleImages[i]}>
                     <h5>{result.name}</h5>
-                    <p className='info'>
-                        <strong>
-                            Population
-                        </strong>
-                        {parseFloat(result.population).toLocaleString('en-IN')}
-                    </p>
+                    <div className='card-info'>
+                        <div className='info-col'>
+                            <p className='info'>{parseFloat(result.population).toLocaleString('en-IN')}</p>
+                            <h6>Population</h6>
+                        </div>
+
+                        <div className='info-col'>
+                            <p className='info'>{result.gravity}</p>
+                            <h6>Gravity</h6>
+                        </div>
+
+                        <div className='info-col'>
+                            <p className='info'>{result.diameter}</p>
+                            <h6>Diameter</h6>
+                        </div>
+
+                        <div className='info-col'>
+                            <p className='info'>{result.orbital_period}</p>
+                            <h6>Orbit Time</h6>
+                        </div>
+                    </div>
+
+                    <div className='card-info-footer'>
+                        <div className='info-col'>
+                            <h6>Terrain:</h6>
+                            <p className='info'>{result.terrain}</p>
+                        </div>
+                        <div className='info-col'>
+                            <h6>Climate:</h6>
+                            <p className='info'>{result.climate}</p>
+                        </div>
+                        <div className='info-col'>
+                            <h6>Water:</h6>
+                            <p className='info'>{result.surface_water}</p>
+                        </div>
+                    </div>
                 </Card>
             )
         })
@@ -40,7 +70,7 @@ const SearchResults = ({ results }) => {
     /* Handles the scroll and adds dynamic header styles
      ----------------------------------------------------------------------- */
     const scrollHandler = (e) => {
-        if (e.target.scrollTop) {
+        if (e.target.scrollTop > 46) {
             appDispatch({ type: 'SHOW_HEADER', payload: 'on-scroll' })
         }
         else {

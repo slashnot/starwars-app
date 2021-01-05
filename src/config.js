@@ -2,7 +2,7 @@
 // App configurations
 import planetImages from 'assets/img/images'
 const config = {
-    baseUrl: 'https://swapi.dev/api',
+    baseUrl: 'http://localhost:8000/api',
     searchDebounceTime: 400,
     planetImages
 }
