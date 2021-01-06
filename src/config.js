@@ -2,7 +2,7 @@
 // App configurations
 import planetImages from 'assets/img/images'
 const config = {
-    baseUrl: 'https://starwars-app-krk.netlify.app/api',
+    baseUrl: 'http://localhost:3000/api',
     searchDebounceTime: 400,
     planetImages,
     requestTimeOutDuration: 60000,
